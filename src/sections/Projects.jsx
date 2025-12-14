@@ -3,10 +3,26 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaFolder, FaStar, FaCodeBranch } from 'react-icons/fa';
 
 const projects = [
-  { title: "Project-Alpha", desc: "Secure e-commerce engine with Stripe integration.", stack: ["React", "Node", "Stripe"], stars: 12, forks: 4, link: "#" },
-  { title: "Neon-Chat", desc: "Real-time websocket messaging app with encryption.", stack: ["Socket.io", "Express", "Redis"], stars: 8, forks: 2, link: "#" },
-  { title: "Algo-Viz", desc: "Interactive pathfinding visualizer (Dijkstra, A*).", stack: ["TypeScript", "Canvas API"], stars: 25, forks: 10, link: "#" }
+  {
+    title: "ETHUNT",
+    desc: "CLI tool for real-time analysis of encrypted VoIP traffic (STUN, RTP/SRTP, DTLS).",
+    stack: ["Python", "Scapy", "Rich", "Networking"],
+    stars: 0,
+    forks: 0,
+    git: "https://github.com/theTyai/ETHUNT",
+    live: "https://github.com/theTyai/ETHUNT"
+  },
+  {
+    title: "SANSKRITIYAM",
+    desc: "E-commerce platform for puja services with Razorpay payments and user tracking.",
+    stack: ["HTML", "CSS", "JavaScript", "PHP", "Razorpay"],
+    stars: 0,
+    forks: 0,
+    git: "https://sanskritiyam.com",
+    live: "https://sanskritiyam.com"
+  }
 ];
+
 
 const Projects = () => {
   return (
@@ -38,8 +54,8 @@ const Projects = () => {
                   <h3 className="text-lg font-bold text-gray-200 group-hover:text-white transition-colors font-mono">{project.title}</h3>
                 </div>
                 <div className="flex gap-3 text-gray-500">
-                  <a href={project.link} className="hover:text-white"><FaGithub size={18} /></a>
-                  <a href={project.link} className="hover:text-white"><FaExternalLinkAlt size={16} /></a>
+                  <a href={project.git} className="hover:text-white"><FaGithub size={18} /></a>
+                  <a href={project.live} className="hover:text-white"><FaExternalLinkAlt size={16} /></a>
                 </div>
               </div>
 

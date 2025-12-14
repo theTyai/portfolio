@@ -4,9 +4,10 @@ import { FaGithub, FaCopy, FaCheck, FaCode} from 'react-icons/fa';
 import { GoVerified } from 'react-icons/go';
 import { useTypewriter } from '../hooks/useTypewriter'; 
 import Profile from '../assets/cp.jpg';
+import Resume from '../assets/Ashish_Resume.pdf';
 
 const Hero = () => {
-  const roles = ["Full Stack Engineer", "Competitive Programmer", "Ethical Hacker"];
+  const roles = ["Full Stack Developer", "Competitive Programmer", "Ethical Hacker"];
   const typewrittenText = useTypewriter(roles);
   const [copied, setCopied] = useState(false);
 
@@ -34,7 +35,7 @@ const Hero = () => {
             <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-green-500/50"></div>
           </div>
           {/* Updated Handle */}
-          <div className="text-[10px] md:text-xs font-mono text-gray-500 flex items-center gap-1 opacity-70">
+          <div className="text-[10px] md:text-xs font-mono text-gray-1000 flex items-center gap-1 opacity-70">
             <span className="text-green-500">➜</span> theTyai@dev-machine: ~
           </div>
           <div className="w-10"></div>
@@ -104,7 +105,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex gap-4 mt-10 justify-center md:justify-end">
              <motion.a 
-               href="/resume.pdf" 
+               href={Resume} 
                whileHover={{ scale: 1.02 }} 
                whileTap={{ scale: 0.98 }} 
                className="font-mono text-sm bg-white text-black px-6 py-3 rounded hover:bg-green-400 hover:shadow-[0_0_20px_rgba(0,255,65,0.4)] transition-all font-bold cursor-pointer"
