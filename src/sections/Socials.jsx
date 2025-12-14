@@ -1,42 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const Socials = () => {
   return (
-    <section id="contact" className="py-20 px-4 flex justify-center bg-[#050505] relative z-10 border-t border-white/5">
+    <section className="px-4 flex justify-center pb-10">
       <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-full max-w-4xl text-center"
+        className="w-full max-w-4xl text-center font-mono"
       >
-        <h2 className="text-2xl font-bold text-white mb-8 font-mono">
-          <span className="text-green-500">sudo</span> initiate_handshake
-        </h2>
+        <div className="mb-8">
+           <span className="text-green-500">theTyai@dev-machine:~#</span> <span className="text-white">sudo initiate_contact</span>
+        </div>
         
-        <div className="flex justify-center gap-8 mb-12">
+        <div className="flex justify-center gap-8 mb-10">
           {[
-            { icon: <FaGithub />, link: "https://github.com" },
-            { icon: <FaLinkedin />, link: "https://linkedin.com" },
-            { icon: <FaTwitter />, link: "https://twitter.com" },
-            { icon: <FaEnvelope />, link: "mailto:your@email.com" },
+            { icon: <FaGithub />, link: "https://github.com/theTyai" },
+            { icon: <FaLinkedin />, link: "https://linkedin.com/theTyai" },
+            { icon: <FaInstagram />, link: "https://instagram/theTyai" },
+            { icon: <FaEnvelope />, link: "mailto:work.mishraashish@gmail.com" },
           ].map((item, i) => (
-            <a 
+            <motion.a 
               key={i} 
               href={item.link} 
               target="_blank" 
               rel="noreferrer" 
-              className="text-gray-500 hover:text-green-500 text-3xl transition-all hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]"
+              whileHover={{ scale: 1.2, color: "#00ff41", textShadow: "0 0 10px rgba(0,255,65,0.5)" }}
+              className="text-gray-500 text-3xl transition-all duration-300"
             >
               {item.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
 
-        <div className="font-mono text-xs text-gray-600 space-y-2">
-          <p>Process finished with exit code 0</p>
-          <p>© 2025 Saumya Khushlani. All systems operational.</p>
+        <div className="text-xs text-gray-600 space-y-2 border-t border-white/5 pt-8 mx-auto max-w-md">
+          <p className="flex justify-between"><span>> Status:</span> <span className="text-green-500">Online</span></p>
+          <p className="flex justify-between mt-4 text-gray-700">
+            <span>© 2025 Ashish Mishra</span>
+            <span>System Operational</span>
+          </p>
         </div>
       </motion.div>
     </section>

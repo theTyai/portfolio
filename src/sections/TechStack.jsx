@@ -1,51 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaPython, FaDocker } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiTypescript, SiNextdotjs } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiCplusplus, SiPhp, SiMysql } from 'react-icons/si';
 
 const techs = [
-    { name: "React", icon: <FaReact className="text-blue-400" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-    { name: "Python", icon: <FaPython className="text-yellow-400" /> },
-    { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+  { name: "React", icon: <FaReact className="text-blue-400" /> },
+  { name: "Php", icon: <SiPhp className="text-white" /> },
+  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "Python", icon: <FaPython className="text-blue-400" /> },
+  { name: "C++", icon: <SiCplusplus className="text-blue-600" /> },
+  { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
 ];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
 
 const TechStack = () => {
   return (
-    <section id="skills" className="py-20 px-4 flex justify-center bg-[#050505] relative z-10">
+    <section className="px-4 flex justify-center">
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="w-full max-w-5xl bg-[#0a0a0a] rounded-xl border border-white/10 shadow-2xl overflow-hidden"
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-5xl bg-[#0a0a0a]/90 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl overflow-hidden"
       >
-        {/* Header */}
         <div className="bg-[#111] p-3 flex justify-between items-center border-b border-white/5">
-          <div className="flex gap-2 ml-2">
-             <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
-             <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
-          </div>
-          <div className="text-xs font-mono text-gray-500">npm list --depth=0</div>
+          <div className="flex gap-2 ml-2"><div className="w-3 h-3 rounded-full bg-zinc-700"></div></div>
+          <div className="text-xs font-mono text-gray-500 opacity-70">root@server:~/skills# npm list</div>
           <div className="w-10"></div>
         </div>
 
-        {/* Grid Content */}
-        <div className="p-8">
-           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-             {techs.map((tech, idx) => (
-               <div key={idx} className="flex flex-col items-center justify-center p-6 bg-[#111] rounded border border-white/5 hover:border-green-500/30 hover:bg-[#161616] transition-all group cursor-pointer">
-                 <div className="text-4xl mb-3 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
-                   {tech.icon}
-                 </div>
-                 <span className="font-mono text-xs text-gray-500 group-hover:text-green-400">{tech.name}</span>
-               </div>
-             ))}
-           </div>
-        </div>
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="p-8 grid grid-cols-2 md:grid-cols-4 gap-4"
+        >
+          {techs.map((tech, idx) => (
+            <motion.div 
+              key={idx}
+              variants={item}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
+              className="flex items-center gap-3 p-4 rounded border border-white/5 bg-transparent transition-all cursor-default"
+            >
+              <div className="text-2xl">{tech.icon}</div>
+              <span className="font-mono text-sm font-bold text-gray-300">{tech.name}</span>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -2,41 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #050505;
+  --bg-card: #0a0a0a;
+  --neon-green: #00ff41;
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
 
 body {
-  background-color: #050505; /* Deep Black */
+  background-color: var(--bg-dark);
   color: #e4e4e7;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  selection-background-color: rgba(0, 255, 65, 0.2);
+  selection-color: #fff;
 }
 
-/* The Hacker/Dev Font Class */
-.font-mono {
-  font-family: 'Fira Code', monospace;
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
 }
 
-/* Subtle Scanline Overlay (TV Effect) */
-.scanline {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0) 50%,
-    rgba(0,0,0,0.1) 50%,
-    rgba(0,0,0,0.1)
-  );
-  background-size: 100% 4px;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.15;
-}
-
-/* Neon Glow Utilities */
-.glow-text {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-}
-.glow-box {
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+/* Utilities */
+.font-mono { font-family: 'Fira Code', monospace; }
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
 }
