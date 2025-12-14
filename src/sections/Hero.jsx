@@ -4,7 +4,7 @@ import { FaGithub, FaCopy, FaCheck } from 'react-icons/fa'; // Removed FaLinkedi
 import { SiLeetcode } from 'react-icons/si';
 import { GoVerified } from 'react-icons/go';
 import { useTypewriter } from '../hooks/useTypewriter'; 
-
+import profile from '../assets/cp.jpg'; 
 const Hero = () => {
   const roles = ["Full Stack Developer", "Competitive Programmer", "Ethical Hacker"];
   const typewrittenText = useTypewriter(roles);
@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="relative group">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-green-500/30 p-1 group-hover:border-green-400 transition-colors">
                 <img 
-                  src="https://via.placeholder.com/200" 
+                  src={profile} 
                   alt="Profile" 
                   className="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
