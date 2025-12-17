@@ -4,10 +4,10 @@ import { SiLeetcode, SiCodechef, SiCodeforces } from 'react-icons/si';
 import { FaTrophy } from 'react-icons/fa';
 
 const platforms = [
-  { name: "LeetCode", icon: <SiLeetcode className="text-yellow-500" />, rating: "1850", rank: "Top 5%", link: "#" },
-  { name: "CodeChef", icon: <SiCodechef className="text-amber-700" />, rating: "1650", rank: "3 Star", link: "#" },
-  { name: "Codeforces", icon: <SiCodeforces className="text-blue-500" />, rating: "1420", rank: "Specialist", link: "#" },
-  { name: "AtCoder", icon: <FaTrophy className="text-gray-200" />, rating: "600", rank: "Brown", link: "#" }
+  { name: "LeetCode", icon: <SiLeetcode className="text-yellow-500" />, rating: "1650", rank: "Top 25%", link: "#" },
+  { name: "CodeChef", icon: <SiCodechef className="text-amber-700" />, rating: "1406", rank: "2 Star", link: "#" },
+  { name: "Codeforces", icon: <SiCodeforces className="text-blue-500" />, rating: "1144", rank: "Newbie", link: "#" },
+  { name: "AtCoder", icon: <FaTrophy className="text-gray-200" />, rating: "190", rank: "Gray", link: "#" }
 ];
 
 const Competitive = () => {
